@@ -1,10 +1,20 @@
 package hiber.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
 public class User {
+
+   private Car car;
+
+   @Autowired
+   public User (Car car) {
+      this.car = car;
+   }
 
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
