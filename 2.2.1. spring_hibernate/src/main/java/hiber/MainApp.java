@@ -1,6 +1,7 @@
 package hiber;
 
 import hiber.config.AppConfig;
+import hiber.model.Car;
 import hiber.model.User;
 import hiber.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -15,19 +16,52 @@ public class MainApp {
 
       UserService userService = context.getBean(UserService.class);
 
-      userService.add(new User("User1", "Lastname1", "user1@mail.ru"));
-      userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
-      userService.add(new User("User3", "Lastname3", "user3@mail.ru"));
-      userService.add(new User("User4", "Lastname4", "user4@mail.ru"));
+//      User ivan = new User("Ivan", "Ivanov", "ytrewq@gmail.com");
+//      userService.add(ivan);
+//      Car toyota = new Car("Corolla", 10);
+//      toyota.setUser(ivan);
+//      ivan.setCar(toyota);
+//
+//      User maria = new User("Maria", "Varlamova", "qsazxsw@gmail.com");
+//      userService.add(maria);
+//      Car nissan = new Car("Tiida", 3);
+//      nissan.setUser(maria);
+//      maria.setCar(nissan);
+//
+//      User sergio = new User("Sergio", "Ramos", "qwwerty@gmail.com");
+//      userService.add(sergio);
+//      Car ford = new Car("Focus", 6);
+//      ford.setUser(sergio);
+//      sergio.setCar(ford);
+//
+//      User leo = new User("Leo", "Ronaldo", "cr10@gmail.com");
+//      userService.add(leo);
+//      Car reno = new Car("Logan", 2);
+//      reno.setUser(leo);
+//      leo.setCar(reno);
 
-      List<User> users = userService.listUsers();
-      for (User user : users) {
-         System.out.println("Id = "+user.getId());
-         System.out.println("First Name = "+user.getFirstName());
-         System.out.println("Last Name = "+user.getLastName());
-         System.out.println("Email = "+user.getEmail());
-         System.out.println();
-      }
+      User ivan = new User("Ivan", "Ivanov", "ytrewq@gmail.com");
+      User maria = new User("Maria", "Varlamova", "qsazxsw@gmail.com");
+      User sergio = new User("Sergio", "Ramos", "qwwerty@gmail.com");
+      User leo = new User("Leo", "Ronaldo", "cr10@gmail.com");
+
+      Car toyota = new Car("Corolla", 10);
+      Car nissan = new Car("Tiida", 3);
+      Car ford = new Car("Focus", 6);
+      Car reno = new Car("Logan", 2);
+
+      userService.add(ivan.setCar(toyota).setUser(ivan));
+      userService.add(maria.setCar(nissan).setUser(maria));
+      userService.add(sergio.setCar(ford).setUser(sergio));
+      userService.add(leo.setCar(reno).setUser(leo));
+
+      userService.getUserCar("Corolla", 10);
+
+//      List<User> users = userService.listUsers();
+//      for (User user : users) {
+//         System.out.println(user + " " + user.getCar());
+//         System.out.println();
+//      }
 
       context.close();
    }
