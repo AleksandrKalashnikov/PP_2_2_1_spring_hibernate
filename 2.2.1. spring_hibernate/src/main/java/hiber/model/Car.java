@@ -8,7 +8,6 @@ import java.util.Objects;
 public class Car {
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
     private User user;
 
     @Id

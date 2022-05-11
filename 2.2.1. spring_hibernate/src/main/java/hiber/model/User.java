@@ -8,8 +8,7 @@ import java.util.Objects;
 @Table(name = "users")
 public class User  {
 
-   @OneToOne(cascade = CascadeType.ALL)
-   @JoinColumn(name = "users_id")
+   @OneToOne
    private Car car;
 
    @Id
