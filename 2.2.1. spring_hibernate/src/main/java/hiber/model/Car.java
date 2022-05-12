@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class Car {
 
     @OneToOne
-    @JoinColumn(name = "user_id")
     private User user;
 
     @Id
