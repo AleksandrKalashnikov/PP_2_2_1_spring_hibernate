@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="mykata@localhost" uuid="bb533899-319c-4a21-b980-bb35cad9c08b">
+    <data-source source="LOCAL" name="carskata@localhost" uuid="58e62a79-a977-425c-9058-8534adc6bf4b">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/mykata</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/carskata</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

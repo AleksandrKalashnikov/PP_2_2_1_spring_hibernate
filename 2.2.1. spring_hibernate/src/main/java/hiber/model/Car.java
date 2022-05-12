@@ -1,13 +1,12 @@
 package hiber.model;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "cars")
 public class Car {
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "car")
     private User user;
 
     @Id
