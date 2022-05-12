@@ -1,12 +1,16 @@
 package hiber.model;
 
+import org.hibernate.annotations.LazyToOne;
+import org.hibernate.annotations.LazyToOneOption;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
 public class User  {
 
-   @OneToOne
+   @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, optional = false)
+   @JoinColumn(name = "car_id")
    @MapsId
    private Car car;
 
