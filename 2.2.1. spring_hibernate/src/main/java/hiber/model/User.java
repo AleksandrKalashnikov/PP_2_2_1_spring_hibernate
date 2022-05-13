@@ -7,8 +7,7 @@ import javax.persistence.*;
 @Table(name = "users")
 public class User  {
 
-   @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, optional = false)
-   @JoinColumn(name = "car_id")
+   @OneToOne
    @MapsId
    private Car car;
 
